@@ -1,8 +1,13 @@
+import React from 'react';
+import ClientList from './ClientList';
+
+
 function App() {
   return (
     <div>
-      <h1>Hello, PulseOps!</h1>
+      <ClientList />
     </div>
   );
 }
+
 export default App;
