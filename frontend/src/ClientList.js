@@ -4,29 +4,47 @@ import './ClientList.css';
 
 function ClientList() {
   const [clients, setClients] = useState([]);
-
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   useEffect(() => {
     async function fetchClients() {
-      const resClients = await axios.get("http://localhost:8000/clients");
-      const clientData = await Promise.all(
-        resClients.data.map(async (client) => {
-          const resScore = await axios.get(
-            `http://localhost:8000/health_score/${client.id}`
-          );
-          const resRec = await axios.get(
-            `http://localhost:8000/recommendation/${client.id}`
-          );
-          return { 
-            ...client, 
-            health_score: resScore.data.health_score,
-            recommendation: resRec.data.recommendation
-          };
+      try {
+        setLoading(true);
+        setError(null);
+
+        const resClients = await axios.get("http://localhost:8000/clients");
+        const clientData = await Promise.all(
+          resClients.data.map(async (client) => {
+            const resScore = await axios.get(
+              `http://localhost:8000/health_score/${client.id}`
+            );
+            const resRec = await axios.get(
+              `http://localhost:8000/recommendation/${client.id}`
+            );
+            return {
+              ...client,
+              health_score: resScore.data.health_score,
+              recommendation: resRec.data.recommendation
+            };
         })
       );
-      setClients(clientData);
+        setClients(clientData);
+      } catch (err) {
+        setError("Failed to fetch client data. Please try again later.");
+      } finally {
+        setLoading(false);
+      }
     }
     fetchClients();
   }, []);
+
+  if (loading) {
+    return <div className="loading">Loading client data...</div>;
+  }
+
+  if (error) {
+    return <div className="error">{error}</div>;
+  }
 
   return (
     <div className="dashboard-container">
