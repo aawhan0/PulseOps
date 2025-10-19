@@ -17,39 +17,28 @@ PulseOps is a full-stack web app that visualizes client health scores, identifie
 
 ### Backend Setup
 1. Navigate to the backend directory:
-
-cd backend
-
-text
+`cd backend`
 
 2. Install Python dependencies:
-pip install fastapi uvicorn
+`pip install fastapi uvicorn`
 
-text
 
 3. Run the backend server:
-uvicorn main:app --reload
-
-text
+`uvicorn main:app --reload`
 
 4. Backend runs on: `http://localhost:8000`
 
 ### Frontend Setup
 
 1. Navigate to the frontend directory:
-cd frontend
-
-text
+`cd frontend`
 
 2. Install frontend dependencies:
-npm install
+`npm install`
 
-text
 
 3. Start the React app:
-npm start
-
-text
+`npm start`
 
 4. Access the dashboard at: `http://localhost:3000`
 
