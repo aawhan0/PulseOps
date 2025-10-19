@@ -1,0 +1,157 @@
+/* Base */
+.client-details {
+  font-family: "Inter", sans-serif;
+  background: #1a1a1a;
+  min-height: 100vh;
+  padding: 2rem;
+  color: #e5e7eb; /* light gray text */
+}
+
+.not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  gap: 1rem;
+  text-align: center;
+  color: #e5e7eb;
+}
+
+.back-button,
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: #e5e7eb;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.back-button:hover,
+.back-link:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* Header */
+.header .client-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.client-id {
+  color: #9ca3af;
+  font-size: 0.875rem;
+}
+
+/* Status Badge */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 9999px;
+  font-weight: 500;
+  text-transform: capitalize;
+  border: 1px solid;
+}
+
+.status-badge.excellent { color: #16a34a; border-color: #047857; }
+.status-badge.stable { color: #2563eb; border-color: #1e40af; }
+.status-badge.warning { color: #ca8a04; border-color: #78350f; }
+.status-badge.critical { color: #dc2626; border-color: #991b1b; }
+
+/* Metrics */
+.metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.card {
+  background: #2c2c2c;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  flex: 1;
+  min-width: 280px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  border: 1px solid #3f3f3f;
+}
+
+.card h2, .card h3 {
+  font-size: 1.125rem;
+  margin-bottom: 0.5rem;
+  color: #e5e7eb;
+}
+
+.metric {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: #e5e7eb;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 0.5rem;
+  background: #3f3f3f;
+  border-radius: 0.25rem;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 0.25rem;
+}
+
+.green { background: #16a34a; }
+.yellow { background: #ca8a04; }
+.red { background: #dc2626; }
+.blue { background: #2563eb; }
+
+.metric-note {
+  font-size: 0.875rem;
+  color: #9ca3af;
+}
+
+.recommendation p {
+  color: #e5e7eb;
+}
+
+/* Insights */
+.insights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  color: #9ca3af;
+  font-size: 0.875rem;
+  padding: 2rem 0;
+}
+
+/* Icons sizing */
+.icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.icon.small {
+  width: 1rem;
+  height: 1rem;
+}
+
+.recommendation {
+  margin-bottom: 30px;
+}
