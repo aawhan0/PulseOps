@@ -16,7 +16,11 @@ function ClientList() {
           const resRec = await axios.get(
             `http://localhost:8000/recommendation/${client.id}`
           );
-          return { ...client, health_score: resScore.data.health_score, recommendation: resRec.data.recommendation};
+          return { 
+            ...client, 
+            health_score: resScore.data.health_score,
+            recommendation: resRec.data.recommendation
+          };
         })
       );
       setClients(clientData);
@@ -38,7 +42,6 @@ function ClientList() {
             <div className="client-name">{client.name}</div>
             <div className="client-detail">Health Score: {client.health_score}</div>
             <div className="client-recommendation">Recommendation: {client.recommendation}</div>
-
             {client.churn_risk > 0.7 && (
               <div className="alert-message">High Churn Risk Alert!</div>
             )}

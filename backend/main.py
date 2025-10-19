@@ -38,15 +38,28 @@ def get_recommendation(client_id: int):
     client = next((c for c in clients if c["id"] == client_id), None)
     if not client:
         return {"detail": "Client not found"}
+    
+    health_score = calculate_health_score(client)
 
     if client["churn_risk"] > 0.7:
-        rec = "Schedule retention call" 
-    elif client["health_score"] < 0:
+        rec = "Schedule retention call"
+    elif health_score < 0:
         rec = "Investigate negative score metrics"
     else:
         rec = "Upsell or cross-sell opportunity"
 
     return {"recommendation": rec}
+
+
+def calculate_health_score(client):
+    # Your existing score logic (replace this with your actual logic)
+    score = 0.5  # Base score example
+    # Add calculations such as decreases/increases based on churn risk, usage, etc.
+    if client["churn_risk"] > 0.7:
+        score -= 1.0
+    # Add other rules as needed
+    return score
+
 
 
 if __name__ == "__main__":
