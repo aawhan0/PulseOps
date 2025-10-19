@@ -1,7 +1,7 @@
 # PulseOps: Client Health AI Dashboard
 
 ## Overview
-PulseOps is a full-stack web app that visualizes client health scores, identifies churn risk, and provides AI-powered recommendations to help customer success teams take action.
+- PulseOps is a full-stack web app that visualizes client health scores, identifies churn risk, and provides AI-powered recommendations to help customer success teams take action.
 
 ## Features
 - Backend API to serve clients, calculate health scores, and generate recommendations.
