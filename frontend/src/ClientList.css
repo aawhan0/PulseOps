@@ -11,6 +11,12 @@ body {
   padding: 24px 0 24px 0;
 }
 
+.client-recommendation {
+  color: #00bcd4;
+  font-weight: 600;
+  margin-top: 5px;
+}
+
 .dashboard-title {
   font-size: 2.0rem;
   font-weight: bold;
