@@ -33,5 +33,21 @@ def get_health_score(client_id: int):
     score = 0.5 * profit_ratio + 0.3 * client["sentiment"] - 0.2 * client["churn_risk"]
     return {"name": client["name"], "health_score": round(score, 2)}
 
+@app.get("/recommendation/{client_id}")
+def get_recommendation(client_id: int):
+    client = next((c for c in clients if c["id"] == client_id), None)
+    if not client:
+        return {"detail": "Client not found"}
+
+    if client["churn_risk"] > 0.7:
+        rec = "Schedule retention call" 
+    elif client["health_score"] < 0:
+        rec = "Investigate negative score metrics"
+    else:
+        rec = "Upsell or cross-sell opportunity"
+
+    return {"recommendation": rec}
+
+
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
