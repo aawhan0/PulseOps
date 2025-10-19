@@ -1,5 +1,7 @@
 # PulseOps: Client Health AI Dashboard
 
+Visit Site: https://pulseops.vercel.app/ 
+
 ## Overview
 - PulseOps is a full-stack web app that visualizes client health scores, identifies churn risk, and provides AI-powered recommendations to help customer success teams take action.
 
@@ -12,7 +14,7 @@
 ## Getting Started
 
 ### Prerequisites
-- Python 3.8+
+- Python 3.9+
 - Node.js and npm
 
 ### Backend Setup
@@ -43,6 +45,7 @@
 4. Access the dashboard at: `http://localhost:3000`
 
 ## API Reference
+Deployed Link: https://arpy8-pulseops-backend.hf.space
 
 - `GET /clients`  
 Returns a list of clients with basic details.
